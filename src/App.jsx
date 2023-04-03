@@ -1,5 +1,11 @@
+import Header from "./components/Header";
+
 const App = () => {
-  return <div>Audiophile e-commerce</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
 
 export default App;
