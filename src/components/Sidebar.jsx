@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Sidebar = ({ isSidebarOpen }) => {
   return (
     <aside
-      className={`absolute left-0 right-0 bg-white rounded-br-lg rounded-bl-lg z-50 ${
+      className={`absolute top-24 left-0 right-0 bg-white rounded-br-lg rounded-bl-lg z-50 ${
         isSidebarOpen ? "translate-x-0 shadow" : "-translate-x-[100vw]"
       } transition-transform duration-500 lg:hidden`}
     >
