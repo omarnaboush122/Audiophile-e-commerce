@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 const Sidebar = ({ isSidebarOpen }) => {
   return (
     <aside
-      className={`absolute left-0 right-0 rounded-br-lg rounded-bl-lg z-50 ${
+      className={`absolute left-0 right-0 bg-white rounded-br-lg rounded-bl-lg z-50 ${
         isSidebarOpen ? "translate-x-0" : "-translate-x-[100vw]"
-      } transition-transform duration-500`}
+      } transition-transform duration-500 lg:hidden`}
     >
-      <ul className="grid grid-cols-1 gap-4 px-6 py-8">
+      <ul className="grid grid-cols-1 gap-4 px-6 py-8 sm:grid-cols-2 md:grid-cols-3">
         <li className="relative text-center pt-16">
           <img
             src={Headphone}
