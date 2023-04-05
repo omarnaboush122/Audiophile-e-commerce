@@ -1,6 +1,10 @@
-const Cart = ({isCartOpen}) => {
+const Cart = ({ isCartOpen, setIsCartOpen }) => {
   return (
-    <div className={`bg-white text-black absolute top-32 right-0 w-full max-w-sm rounded-lg z-20 ${isCartOpen && "shadow"}`}>
+    <div
+      className={`bg-white text-black absolute top-32 right-0 w-full max-w-sm rounded-lg z-20 ${
+        isCartOpen && "shadow"
+      }`}
+    >
       <div className="flex flex-col py-8 px-7">
         <div className="flex justify-between items-center">
           <div className="flex items-center text-lg font-bold tracking-wide uppercase">
@@ -20,7 +24,10 @@ const Cart = ({isCartOpen}) => {
           <h4 className="font-medium opacity-50 uppercase">Total</h4>
           <span className="text-lg font-bold uppercase">$0.00</span>
         </div>
-        <button className="w-full bg-burntSienna py-4 text-white text-sm font-bold uppercase tracking-wider rounded">
+        <button
+          onClick={() => setIsCartOpen(false)}
+          className="w-full bg-burntSienna py-4 text-white text-sm font-bold uppercase tracking-wider rounded"
+        >
           fill it
         </button>
       </div>

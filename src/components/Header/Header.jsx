@@ -1,8 +1,8 @@
-import Hamburger from "../assets/shared/tablet/icon-hamburger.svg";
+import Hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
 import { AiOutlineClose } from "react-icons/ai";
-import Logo from "../assets/shared/desktop/logo.svg";
+import Logo from "../../assets/shared/desktop/logo.svg";
 import Cart from "./Cart";
-import CartIcon from "../assets/shared/desktop/icon-cart.svg";
+import CartIcon from "../../assets/shared/desktop/icon-cart.svg";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
@@ -51,7 +51,7 @@ const Header = () => {
             onClick={toggleCart}
           />
         </div>
-        {isCartOpen && <Cart isCartOpen={isCartOpen} />}
+        {isCartOpen && <Cart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />}
       </div>
       {isSidebarOpen && <Sidebar isSidebarOpen={isSidebarOpen} />}
     </header>

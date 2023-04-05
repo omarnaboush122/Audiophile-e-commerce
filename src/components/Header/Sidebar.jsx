@@ -1,7 +1,7 @@
-import Headphone from "../assets/shared/desktop/image-category-thumbnail-headphones.png";
-import Arrow from "../assets/shared/desktop/icon-arrow-right.svg";
-import Speaker from "../assets/shared/desktop/image-category-thumbnail-speakers.png";
-import Earphone from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
+import Headphone from "../../assets/shared/desktop/image-category-thumbnail-headphones.png";
+import Arrow from "../../assets/shared/desktop/icon-arrow-right.svg";
+import Speaker from "../../assets/shared/desktop/image-category-thumbnail-speakers.png";
+import Earphone from "../../assets/shared/desktop/image-category-thumbnail-earphones.png";
 import { Link } from "react-router-dom";
 
 const Sidebar = ({ isSidebarOpen }) => {
