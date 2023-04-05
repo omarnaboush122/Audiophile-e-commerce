@@ -11,3 +11,11 @@ body {
 .shadow {
   box-shadow: 0 0 0 100rem rgba(0, 0, 0, 0.4);
 }
+
+.home-intro {
+  background-image: url("/src/assets/home/tablet/image-header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: calc(100vh - 100px);
+}

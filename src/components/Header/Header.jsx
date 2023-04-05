@@ -16,7 +16,7 @@ const Header = () => {
   const toggleCart = () => setIsCartOpen(!isCartOpen);
 
   return (
-    <header className="bg-blackBean py-8 px-6 border-b border-solid border-[rgb(255,255,255,0.2)]">
+    <header className="bg-blackBean py-8 px-6">
       <div className="relative container mx-auto flex justify-between items-center">
         <div className="lg:hidden">
           {isSidebarOpen ? (
