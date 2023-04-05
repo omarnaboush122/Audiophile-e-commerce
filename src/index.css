@@ -19,3 +19,16 @@ body {
   background-position: center;
   height: calc(100vh - 100px);
 }
+
+@media (min-width: 768px) {
+  .home-intro {
+    background-image: url("/src/assets/home/tablet/image-header.jpg");
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-intro {
+    background-image: url("/src/assets/home/desktop/image-hero.jpg");
+    background-position: bottom;
+  }
+}
