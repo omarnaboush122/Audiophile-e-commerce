@@ -1,20 +1,19 @@
-import Hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
-import { AiOutlineClose } from "react-icons/ai";
-import Logo from "../../assets/shared/desktop/logo.svg";
-import Cart from "./Cart";
-import CartIcon from "../../assets/shared/desktop/icon-cart.svg";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import Logo from "../../assets/shared/desktop/logo.svg";
+import CartIcon from "../../assets/shared/desktop/icon-cart.svg";
+import Hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
-import { useState } from "react";
+import Cart from "./Cart";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
-  const toggleCart = () => {
-    setIsCartOpen((prevCart) => !prevCart);
-  };
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+  const toggleCart = () => setIsCartOpen(!isCartOpen);
 
   return (
     <header className="bg-blackBean py-8 px-6 border-b border-solid border-[rgb(255,255,255,0.2)]">
@@ -25,14 +24,14 @@ const Header = () => {
               color="white"
               size={25}
               className="cursor-pointer"
-              onClick={() => setIsSidebarOpen(false)}
+              onClick={toggleSidebar}
             />
           ) : (
             <img
               src={Hamburger}
               alt="hamburger"
               className="cursor-pointer"
-              onClick={() => setIsSidebarOpen(true)}
+              onClick={toggleSidebar}
             />
           )}
         </div>
@@ -51,7 +50,9 @@ const Header = () => {
             onClick={toggleCart}
           />
         </div>
-        {isCartOpen && <Cart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />}
+        {isCartOpen && (
+          <Cart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+        )}
       </div>
       {isSidebarOpen && <Sidebar isSidebarOpen={isSidebarOpen} />}
     </header>
