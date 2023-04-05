@@ -1,8 +1,8 @@
 const Cart = ({ isCartOpen, setIsCartOpen }) => {
   return (
     <div
-      className={`bg-white text-black rounded-lg shadow-md py-8 px-7 w-full max-w-sm absolute right-0 top-28 transform ${
-        isCartOpen ? 'translate-y-0' : 'translate-y-full'
+      className={`bg-white text-black rounded-lg py-8 px-7 w-full max-w-sm absolute right-0 top-28 transform ${
+        isCartOpen ? 'translate-y-0 shadow' : 'translate-y-full'
       } z-20 transition-transform duration-300`}
     >
       <div className="flex justify-between items-center mb-4">
