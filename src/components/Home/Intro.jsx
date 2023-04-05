@@ -10,7 +10,7 @@ const Intro = () => {
         <h1 className="text-4xl font-bold max-w-xs tracking-widest uppercase mt-4 mb-6 md:text-6xl md:tracking-[2px] md:max-w-md">
           XX99 Mark II HeadphoneS
         </h1>
-        <p className="text-base font-medium opacity-75 mb-7 max-w-xs md:max-w-sm">
+        <p className="text-base font-medium opacity-75 mb-7 max-w-xs md:max-w-sm md:mb-10">
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
