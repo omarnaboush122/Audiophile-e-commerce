@@ -32,3 +32,10 @@ body {
     background-position: center 80%;
   }
 }
+
+.speakerzx7 {
+  background-image: url("/src/assets/home/desktop/image-speaker-zx7.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
