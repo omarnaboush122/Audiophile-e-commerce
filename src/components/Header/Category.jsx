@@ -7,7 +7,7 @@ const Category = ({ image, title, link }) => {
       <img
         src={image}
         alt={title}
-        className="w-36 absolute top-0 left-[50%] -translate-x-[50%]"
+        className="w-36 absolute top-10 left-[50%] -translate-x-[50%]"
       />
       <div className="bg-brightGray w-full flex flex-col justify-center items-center gap-4 pt-20 pb-6 rounded-lg">
         <h3 className="text-base font-bold uppercase tracking-wider">
