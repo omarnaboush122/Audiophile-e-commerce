@@ -29,6 +29,6 @@ body {
 @media (min-width: 1024px) {
   .home-intro {
     background-image: url("/src/assets/home/desktop/image-hero.jpg");
-    background-position: bottom;
+    background-position: center 80%;
   }
 }
