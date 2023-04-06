@@ -1,4 +1,5 @@
 import Categories from "../components/Home/Categories";
+import SpeakersAndEarphones from "../components/Home/SpeakersAndEarphones";
 import Intro from "../components/Home/intro";
 
 const Home = () => {
@@ -6,6 +7,7 @@ const Home = () => {
     <main>
       <Intro />
       <Categories />
+      <SpeakersAndEarphones />
     </main>
   );
 };
