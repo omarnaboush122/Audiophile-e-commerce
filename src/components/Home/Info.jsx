@@ -2,8 +2,8 @@ import Hero from "../../assets/shared/desktop/image-best-gear.jpg"
 
 const Info = () => {
   return (
-    <section className='my-32 md:my-24 lg:my-48'>
-      <div className="container mx-auto px-6 flex flex-col gap-10 md:px-0 md:gap-16 lg:flex-row-reverse lg:items-center lg:gap-32">
+    <section className='my-32'>
+      <div className="w-[90vw] max-w-5xl mx-auto flex flex-col gap-10 md:gap-16 lg:flex-row-reverse lg:items-center lg:gap-32">
         <article>
           <img src={Hero} alt="hero" className="w-full h-[300px] rounded-lg object-cover flex-1 lg:h-[540px]" />
         </article>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Intro = () => {
   return (
     <section className="home-intro">
-      <div className="container mx-auto flex flex-col justify-center items-center h-full text-white text-center border-t border-solid border-[rgb(255,255,255,0.2)] lg:text-left lg:items-start">
+      <div className="w-[90vw] max-w-5xl mx-auto flex flex-col justify-center items-center h-full text-white text-center border-t border-solid border-[rgb(255,255,255,0.2)] lg:text-left lg:items-start">
         <h3 className="text-sm tracking-[10px] uppercase opacity-50">
           new product
         </h3>
