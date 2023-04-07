@@ -1,10 +1,12 @@
-import TitlePage from "../components/TitlePage";
+import Header from "../components/Headphones/Header";
+import NewProduct from "../components/Headphones/NewProduct";
 
 
 const Headphones = () => {
   return (
     <main>
-      <TitlePage title="headphones" />
+      <Header />
+      <NewProduct />
     </main>
   );
 }
