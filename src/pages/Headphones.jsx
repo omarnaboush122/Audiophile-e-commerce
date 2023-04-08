@@ -7,7 +7,7 @@ import Info from "../components/Home/Info";
 const Headphones = () => {
   return (
     <main>
-      <Header />
+      <Header title="headphones" />
       <AllProducts />
       <Categories />
       <Info />

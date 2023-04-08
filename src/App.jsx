@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import Home from "./pages/Home";
 import Footer from "./components/Footer/Footer";
 import Headphones from "./pages/Headphones";
+import Speakers from "./pages/Speakers";
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/headphones" element={<Headphones />} />
+        <Route path="/speakers" element={<Speakers />} />
       </Routes>
       <Footer />
     </>
