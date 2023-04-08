@@ -6,7 +6,7 @@ const Product = ({ flexDirection, img, title, newProduct, desc, link }) => {
     <article>
       <div className={`flex flex-col justify-center items-center gap-8 text-center lg:flex-${flexDirection} lg:gap-28 lg:text-left`}>
         <div>
-          <img src={img} alt={title} className="w-full max-w-2xl" />
+          <img src={img} alt={title} className="w-full max-w-2xl rounded-lg" />
         </div>
         <div className="flex flex-col gap-6 md:gap-8">
           {newProduct && <h3 className="text-sm text-burntSienna uppercase tracking-[10px]">new product</h3>}
