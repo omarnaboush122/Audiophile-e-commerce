@@ -8,7 +8,7 @@ const SpeakerZx9 = () => {
     <div className="flex flex-col justify-center items-center gap-6 max-w-sm mx-auto lg:items-start lg:m-0 lg:text-left">
       <h3 className=" text-4xl font-bold uppercase max-w-[260px] mx-auto tracking-widest md:text-6xl lg:m-0">zx9 speaker</h3>
       <p className="text-base font-medium opacity-75">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-      <Link className="bg-black py-4 px-8 text-sm font-bold tracking-widest uppercase cursor-pointer hover:bg-[#4c4c4c] transition-colors duration-300">See Product</Link>
+      <Link to="/product/6" className="bg-black py-4 px-8 text-sm font-bold tracking-widest uppercase cursor-pointer hover:bg-[#4c4c4c] transition-colors duration-300">See Product</Link>
     </div>
   </article>
   );

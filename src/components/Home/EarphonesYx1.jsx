@@ -9,7 +9,7 @@ const EarphonesYx1 = () => {
       </div>
       <div className="flex flex-col items-start justify-center gap-8 bg-brightGray text-black px-6 py-10 rounded-lg md:p-10 lg:px-24">
         <h3 className="text-2xl font-bold uppercase tracking-widest md:text-3xl">yx1 earphones</h3>
-        <Link className="text-sm font-bold py-4 px-8 uppercase tracking-wider border border-solid border-black hover:bg-black hover:text-white transition-colors duration-300">see product</Link>
+        <Link to="/product/1" className="text-sm font-bold py-4 px-8 uppercase tracking-wider border border-solid border-black hover:bg-black hover:text-white transition-colors duration-300">see product</Link>
       </div>
     </article>
   );

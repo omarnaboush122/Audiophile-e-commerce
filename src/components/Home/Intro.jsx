@@ -14,7 +14,7 @@ const Intro = () => {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </p>
-        <Link className="bg-burntSienna text-white py-4 px-8 text-sm font-bold tracking-widest uppercase cursor-pointer hover:bg-peach transition-colors duration-300">
+        <Link to="/product/4" className="bg-burntSienna text-white py-4 px-8 text-sm font-bold tracking-widest uppercase cursor-pointer hover:bg-peach transition-colors duration-300">
           see product
         </Link>
       </div>
