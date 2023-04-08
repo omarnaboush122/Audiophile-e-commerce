@@ -42,13 +42,14 @@ const Header = () => {
 
         <Navbar />
 
-        <div>
+        <div className="relative">
           <img
             src={CartIcon}
             alt="cart-icon"
             className="cursor-pointer"
             onClick={toggleCart}
           />
+          <span className="absolute -top-3 -right-3 w-5 h-5 rounded-full bg-burntSienna text-white flex justify-center items-center text-sm">0</span>
         </div>
         {isCartOpen && (
           <Cart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
