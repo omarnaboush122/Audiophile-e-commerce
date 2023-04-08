@@ -8,7 +8,7 @@ const Categories = () => {
   ));
   return (
     <section className="mt-10 mb-32 md:my-24">
-      <div className="w-[90vw] max-w-5xl mx-auto">
+      <div className="w-[90vw] max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 sm:gap-3 md:grid-cols-3 lg:gap-8">
           {categoriesElements}
         </div>

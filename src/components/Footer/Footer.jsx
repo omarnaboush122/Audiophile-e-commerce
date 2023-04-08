@@ -32,7 +32,7 @@ const Footer = () => {
           <div>
             <p className="font-bold opacity-50">Copyright 2021. All Rights Reserved</p>
           </div>
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex justify-center items-center gap-4 lg:-translate-y-32">
             <FaFacebook size={30} className="cursor-pointer hover:text-burntSienna transition-colors duration-300" />
             <FaTwitter size={30} className="cursor-pointer hover:text-burntSienna transition-colors duration-300" />
             <FaInstagram size={30} className="cursor-pointer hover:text-burntSienna transition-colors duration-300" />
