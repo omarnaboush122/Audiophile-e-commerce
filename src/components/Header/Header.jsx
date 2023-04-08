@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <header className="bg-blackBean">
-      <div className="relative w-[90vw] max-w-5xl mx-auto py-8 flex justify-between items-center">
+      <div className="relative w-[90vw] max-w-6xl mx-auto py-8 flex justify-between items-center">
         <div className="lg:hidden">
           {isSidebarOpen ? (
             <AiOutlineClose
