@@ -1,16 +1,25 @@
+import { useContext } from "react";
+import { Context } from "../../Context";
+
 const Cart = ({ isCartOpen, setIsCartOpen }) => {
+
+  const { products, setProducts } = useContext(Context);
+
+  const removeAllProducts = () => {
+    setProducts([]);
+  }
+
   return (
     <div
-      className={`bg-white text-black rounded-lg py-8 px-7 w-full max-w-sm absolute right-0 top-28 transform ${
-        isCartOpen ? 'translate-y-0 shadow' : 'translate-y-full'
-      } z-20 transition-transform duration-300`}
+      className={`bg-white text-black rounded-lg py-8 px-7 w-full max-w-sm absolute right-0 top-28 transform ${isCartOpen ? 'translate-y-0 shadow' : 'translate-y-full'
+        } z-20 transition-transform duration-300`}
     >
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center text-lg font-bold tracking-wide uppercase">
           <h3 className="mr-2">Cart</h3>
-          <span>(3)</span>
+          <span>({products.length})</span>
         </div>
-        <button className="font-medium opacity-50 underline hover:text-burntSienna transition-colors duration-300">
+        <button className="font-medium opacity-50 underline hover:text-burntSienna transition-colors duration-300" onClick={removeAllProducts}>
           Remove all
         </button>
       </div>

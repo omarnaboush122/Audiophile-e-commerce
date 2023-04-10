@@ -7,8 +7,11 @@ import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Cart from "./Cart";
 import { AiOutlineClose } from "react-icons/ai";
+import { useContext } from "react";
+import { Context } from "../../Context";
 
 const Header = () => {
+  const { products } = useContext(Context);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -49,7 +52,7 @@ const Header = () => {
             className="cursor-pointer"
             onClick={toggleCart}
           />
-          <span className="absolute -top-3 -right-3 w-5 h-5 rounded-full bg-burntSienna text-white text-xs flex justify-center items-center">0</span>
+          <span className="absolute -top-3 -right-3 w-5 h-5 rounded-full bg-burntSienna text-white text-xs flex justify-center items-center">{products.length}</span>
         </div>
         {isCartOpen && (
           <Cart isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
