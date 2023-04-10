@@ -3,18 +3,20 @@ import data from "../data.json";
 import ProductDescription from "../components/ProductDetail/ProductDescription";
 import GoBack from "../components/ProductDetail/GoBack";
 import ProductFeatures from "../components/ProductDetail/ProductFeatures";
+import ProductImages from "../components/ProductDetail/ProductImages";
 
 const ProductDetailPage = () => {
 
   let { id } = useParams();
 
   const { mobile } = data[id - 1].categoryImage;
-  const { name, new: newProduct, description, price, features, includes } = data[id - 1];
+  const { name, new: newProduct, description, price, features, includes, gallery } = data[id - 1];
   return (
     <main>
       <GoBack />
       <ProductDescription img={mobile} name={name} newProduct={newProduct} description={description} price={price} />
       <ProductFeatures features={features} includes={includes} />
+      <ProductImages gallery={gallery} />
     </main>
   );
 }
