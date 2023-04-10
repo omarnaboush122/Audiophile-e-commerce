@@ -5,6 +5,8 @@ import GoBack from "../components/ProductDetail/GoBack";
 import ProductFeatures from "../components/ProductDetail/ProductFeatures";
 import ProductImages from "../components/ProductDetail/ProductImages";
 import OtherProducts from "../components/ProductDetail/OtherProducts";
+import Categories from "../components/Home/Categories";
+import Info from "../components/Home/Info";
 
 const ProductDetailPage = () => {
 
@@ -19,6 +21,8 @@ const ProductDetailPage = () => {
       <ProductFeatures features={features} includes={includes} />
       <ProductImages gallery={gallery} />
       <OtherProducts others={others} />
+      <Categories />
+      <Info />
     </main>
   );
 }
