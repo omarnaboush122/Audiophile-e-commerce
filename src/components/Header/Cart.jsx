@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { Context } from "../../Context";
+import { Link } from "react-router-dom";
 
 const Cart = ({ isCartOpen, setIsCartOpen }) => {
-
   const { products, setProducts } = useContext(Context);
 
   const removeAllProducts = () => {
@@ -12,12 +12,17 @@ const Cart = ({ isCartOpen, setIsCartOpen }) => {
   const productsElements = products.map(product => (
     <div key={product.id} className="flex justify-between items-center">
       <img src={product.img} alt={product.name} className="w-16 h-16 rounded-lg" />
-      <div className="flex flex-col items-end gap-2">
+      <div className="flex flex-col gap-2 text-center">
         <h3 className="text-sm font-bold uppercase tracking-wider">{product.name}</h3>
         <p className="text-sm font-bold opacity-50">${product.price.toFixed(2)}</p>
       </div>
+      <p className="text-sm font-bold opacity-50">{product.count}x</p>
     </div>
-  ))
+  ));
+
+  const totalPrice = products.reduce((acc, product) => {
+     return acc + product.price * product.count
+  }, 0)
 
   return (
     <div
@@ -42,17 +47,22 @@ const Cart = ({ isCartOpen, setIsCartOpen }) => {
       </div>
       <div className="flex justify-between items-center mb-6">
         <h4 className="font-medium opacity-50 uppercase">Total</h4>
-        <span className="text-lg font-bold uppercase">$0.00</span>
+        <span className="text-lg font-bold uppercase">${totalPrice.toFixed(2)}</span>
       </div>
-      <button
-        onClick={() => setIsCartOpen(false)}
-        className="w-full bg-burntSienna py-4 text-white text-sm font-bold uppercase tracking-wider rounded"
-      >
-        fill it
-      </button>
+      {
+        products.length > 0 ? <Link to="/checkout"
+          className="block w-full bg-burntSienna py-4 text-white text-center text-sm font-bold uppercase tracking-wider rounded"
+        >
+          checkout
+        </Link> : <button
+          onClick={() => setIsCartOpen(false)}
+          className="w-full bg-burntSienna py-4 text-white text-sm font-bold uppercase tracking-wider rounded"
+        >
+          fill it
+        </button>
+      }
     </div>
   );
 };
 
 export default Cart;
-

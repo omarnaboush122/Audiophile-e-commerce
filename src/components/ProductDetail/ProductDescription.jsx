@@ -20,17 +20,31 @@ const ProductDescription = ({ img, name, newProduct, description, price }) => {
   }
 
   const addProduct = () => {
-    for (let i = 0; i < count; i++) {
-      setProducts(prevProducts => [...prevProducts,
-      {
-        id: nanoid(),
-        img,
-        name,
-        price,
+    const productToAdd = {
+      id: nanoid(),
+      img,
+      name,
+      price,
+      count
+    };
+    let isProductAlreadyAdded = false;
+    setProducts(prevProducts => {
+      // Check if product already exists in the cart
+      for (let i = 0; i < prevProducts.length; i++) {
+        if (prevProducts[i].id === productToAdd.id) {
+          isProductAlreadyAdded = true;
+          prevProducts[i].count += count; // Update the count of repeated products
+          break;
+        }
       }
-      ])
-    }
+      // Add product only if it doesn't already exist in the cart
+      if (!isProductAlreadyAdded) {
+        return [...prevProducts, productToAdd];
+      }
+      return prevProducts;
+    });
   }
+
 
   return (
     <section className="mb-16">
