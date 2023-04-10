@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { useState } from "react";
+import { Context } from "../../Context";
+import { nanoid } from 'nanoid'
 
 
 const ProductDescription = ({ img, name, newProduct, description, price }) => {
+  const { setProducts } = useContext(Context);
+
   const [count, setCount] = useState(1);
 
   const increment = () => {
@@ -11,6 +16,19 @@ const ProductDescription = ({ img, name, newProduct, description, price }) => {
   const decrement = () => {
     if (count > 1) {
       setCount(prevCount => prevCount - 1);
+    }
+  }
+
+  const addProduct = () => {
+    for (let i = 0; i < count; i++) {
+      setProducts(prevProducts => [...prevProducts,
+      {
+        id: nanoid(),
+        img,
+        name,
+        price,
+      }
+      ])
     }
   }
 
@@ -29,7 +47,7 @@ const ProductDescription = ({ img, name, newProduct, description, price }) => {
               <span className="text-sm font-bold text-center uppercase">{count}</span>
               <span className="block opacity-25 font-bold text-center cursor-pointer hover:text-burntSienna transition-colors duration-300" onClick={increment}>+</span>
             </div>
-            <button className=" bg-burntSienna text-white uppercase py-4 px-8 tracking-wider hover:bg-peach transition-colors duration-300">add to cart</button>
+            <button className="bg-burntSienna text-white uppercase py-4 px-8 tracking-wider hover:bg-peach transition-colors duration-300" onClick={addProduct}>add to cart</button>
           </div>
         </article>
       </div>

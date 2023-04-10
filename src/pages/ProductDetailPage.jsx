@@ -13,7 +13,7 @@ const ProductDetailPage = () => {
   let { id } = useParams();
 
   const { mobile } = data[id - 1].categoryImage;
-  const { name, new: newProduct, description, price, features, includes, gallery, others } = data[id - 1];
+  const {  name, new: newProduct, description, price, features, includes, gallery, others } = data[id - 1];
   return (
     <main>
       <GoBack />
