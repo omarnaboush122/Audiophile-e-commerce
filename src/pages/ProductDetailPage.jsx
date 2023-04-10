@@ -9,12 +9,12 @@ const ProductDetailPage = () => {
   let { id } = useParams();
 
   const { mobile } = data[id - 1].categoryImage;
-  const { name, new: newProduct, description, price,features } = data[id - 1];
+  const { name, new: newProduct, description, price, features, includes } = data[id - 1];
   return (
     <main>
       <GoBack />
       <ProductDescription img={mobile} name={name} newProduct={newProduct} description={description} price={price} />
-      <ProductFeatures features={features}/>
+      <ProductFeatures features={features} includes={includes} />
     </main>
   );
 }
