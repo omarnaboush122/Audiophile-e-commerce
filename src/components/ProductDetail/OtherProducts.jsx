@@ -4,10 +4,10 @@ const OtherProducts = ({ others }) => {
 
   const scrollToTop = () => {
     window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+      top: 0,
+      behavior: "smooth"
     });
-    };
+  };
 
   const otherProductsElements = others.map((item, i) => (
     <article key={i} className="flex flex-col gap-8">
