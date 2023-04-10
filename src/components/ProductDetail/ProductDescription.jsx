@@ -13,6 +13,7 @@ const ProductDescription = ({ img, name, newProduct, description, price }) => {
       setCount(prevCount => prevCount - 1);
     }
   }
+
   return (
     <section className="mb-16">
       <div className="w-[90vw] max-w-6xl mx-auto flex flex-col justify-center items-center gap-8 md:flex-row md:gap-16 lg:gap-32">
