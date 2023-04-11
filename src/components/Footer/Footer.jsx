@@ -3,6 +3,7 @@ import Logo from "../../assets/shared/desktop/logo.svg";
 import { FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
   return (
     <footer className="bg-blackBean text-white">
       <div className='w-[90vw] max-w-6xl mx-auto text-center pb-12 md:text-left'>
@@ -30,7 +31,7 @@ const Footer = () => {
         </div>
         <div className="w-full flex flex-col gap-12 md:flex-row md:justify-between md:items-center">
           <div>
-            <p className="font-bold opacity-50">Copyright 2021. All Rights Reserved</p>
+            <p className="font-bold opacity-50">Copyright {year} . All Rights Reserved</p>
           </div>
           <div className="flex justify-center items-center gap-4 lg:-translate-y-24">
             <FaFacebook size={30} className="cursor-pointer hover:text-burntSienna transition-colors duration-300" />

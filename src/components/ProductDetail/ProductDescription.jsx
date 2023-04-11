@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { useState } from "react";
 import { Context } from "../../Context";
-import { nanoid } from 'nanoid'
 
 
 const ProductDescription = ({ id, img, name, newProduct, description, price }) => {

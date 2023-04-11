@@ -6,6 +6,7 @@ import Headphones from "./pages/Headphones";
 import Speakers from "./pages/Speakers";
 import Earphones from "./pages/Earphones";
 import ProductDetailPage from "./pages/ProductDetailPage";
+import Checkout from "./pages/Checkout";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/speakers" element={<Speakers />} />
         <Route path="/earphones" element={<Earphones />} />
         <Route path="/product/:id" element={<ProductDetailPage />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
       <Footer />
     </>
