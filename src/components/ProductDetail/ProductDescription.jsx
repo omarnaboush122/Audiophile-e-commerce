@@ -4,7 +4,7 @@ import { Context } from "../../Context";
 import { nanoid } from 'nanoid'
 
 
-const ProductDescription = ({ img, name, newProduct, description, price }) => {
+const ProductDescription = ({id, img, name, newProduct, description, price }) => {
   const { setProducts } = useContext(Context);
 
   const [count, setCount] = useState(1);
@@ -21,7 +21,7 @@ const ProductDescription = ({ img, name, newProduct, description, price }) => {
 
   const addProduct = () => {
     const productToAdd = {
-      id: nanoid(),
+      id,
       img,
       name,
       price,
@@ -29,21 +29,23 @@ const ProductDescription = ({ img, name, newProduct, description, price }) => {
     };
     let isProductAlreadyAdded = false;
     setProducts(prevProducts => {
-      // Check if product already exists in the cart
-      for (let i = 0; i < prevProducts.length; i++) {
-        if (prevProducts[i].id === productToAdd.id) {
+      const updatedProducts = prevProducts.map(product => {
+        if (product.id === productToAdd.id) {
           isProductAlreadyAdded = true;
-          prevProducts[i].count += count; // Update the count of repeated products
-          break;
+          return { ...product, count: product.count + count };
+        } else {
+          return product;
         }
-      }
-      // Add product only if it doesn't already exist in the cart
+      });
+  
       if (!isProductAlreadyAdded) {
-        return [...prevProducts, productToAdd];
+        return [...updatedProducts, productToAdd];
+      } else {
+        return updatedProducts;
       }
-      return prevProducts;
     });
   }
+  
 
 
   return (
