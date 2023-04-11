@@ -9,19 +9,23 @@ const Cart = ({ isCartOpen, setIsCartOpen }) => {
     setProducts([]);
   }
 
+  const formatPrice = (price) => {
+    return price.toLocaleString("en-US", { style: "currency", currency: "USD" });
+  }
+
   const productsElements = products.map(product => (
     <div key={product.id} className="flex justify-between items-center">
       <img src={product.img} alt={product.name} className="w-16 h-16 rounded-lg" />
       <div className="flex flex-col gap-2 text-center">
         <h3 className="text-sm font-bold uppercase tracking-wider">{product.name}</h3>
-        <p className="text-sm font-bold opacity-50">${product.price.toFixed(2)}</p>
+        <p className="text-sm font-bold opacity-50">{formatPrice(product.price)}</p>
       </div>
       <p className="text-sm font-bold opacity-50">{product.count}x</p>
     </div>
   ));
 
   const totalPrice = products.reduce((acc, product) => {
-     return acc + product.price * product.count
+    return acc + product.price * product.count
   }, 0)
 
   return (
@@ -47,7 +51,7 @@ const Cart = ({ isCartOpen, setIsCartOpen }) => {
       </div>
       <div className="flex justify-between items-center mb-6">
         <h4 className="font-medium opacity-50 uppercase">Total</h4>
-        <span className="text-lg font-bold uppercase">${totalPrice.toFixed(2)}</span>
+        <span className="text-lg font-bold uppercase">{formatPrice(totalPrice)}</span>
       </div>
       {
         products.length > 0 ? <Link to="/checkout"

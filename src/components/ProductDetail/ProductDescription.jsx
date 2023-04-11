@@ -4,7 +4,7 @@ import { Context } from "../../Context";
 import { nanoid } from 'nanoid'
 
 
-const ProductDescription = ({id, img, name, newProduct, description, price }) => {
+const ProductDescription = ({ id, img, name, newProduct, description, price }) => {
   const { setProducts } = useContext(Context);
 
   const [count, setCount] = useState(1);
@@ -37,7 +37,7 @@ const ProductDescription = ({id, img, name, newProduct, description, price }) =>
           return product;
         }
       });
-  
+
       if (!isProductAlreadyAdded) {
         return [...updatedProducts, productToAdd];
       } else {
@@ -45,7 +45,8 @@ const ProductDescription = ({id, img, name, newProduct, description, price }) =>
       }
     });
   }
-  
+
+  const formattedPrice = price.toLocaleString("en-US", { style: "currency", currency: "USD" });
 
 
   return (
@@ -56,7 +57,7 @@ const ProductDescription = ({id, img, name, newProduct, description, price }) =>
           {newProduct && <h3 className="text-sm text-burntSienna uppercase tracking-[10px]">new product</h3>}
           <h2 className="text-3xl font-bold tracking-wider md:text-4xl">{name}</h2>
           <p className=" font-medium opacity-50">{description}</p>
-          <span className="text-lg font-bold uppercase tracking-widest">${price.toFixed(2)}</span>
+          <span className="text-lg font-bold uppercase tracking-widest">{formattedPrice}</span>
           <div className="flex gap-4">
             <div className="bg-brightGray text-black flex items-center gap-10 p-4">
               <span className="block opacity-25 font-bold text-center cursor-pointer hover:text-burntSienna transition-colors duration-300" onClick={decrement}>-</span>
