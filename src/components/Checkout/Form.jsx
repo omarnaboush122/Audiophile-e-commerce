@@ -3,6 +3,7 @@ import Cash from "../../assets/checkout/icon-cash-on-delivery.svg";
 import { Context } from "../../Context";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
+import TextInput from "./TextInput";
 
 
 const Form = () => {
@@ -12,8 +13,8 @@ const Form = () => {
   const vat = 1079;
   const grandTotal = totalPrice + shipping + vat;
 
-  const { register, control, handleSubmit, formState} = useForm();
-  const {errors} = formState;
+  const { register, control, handleSubmit, formState } = useForm();
+  const { errors } = formState;
 
   const onSubmit = (data) => {
     console.log("form submitted", data);
@@ -39,48 +40,18 @@ const Form = () => {
             <div className="mb-8">
               <h3 className="text-sm text-burntSienna font-bold uppercase tracking-wider mt-8 mb-4">billing details</h3>
               <div className="flex flex-wrap gap-6">
-                <div className="relative flex flex-col gap-2 flex-1">
-                  <label htmlFor="name" className={`text-xs font-bold ${errors.name?.message ?"text-danger" :"text-black"}`}>Name</label>
-                  <input type="text" id="name" className={`px-6 py-5 text-sm font-bold rounded-lg border-2 border-solid caret-burntSienna focus:border-burntSienna focus:outline-burntSienna ${errors.name?.message ? "border-danger": "border-[#cfcfcf]"}`} placeholder="Alexei Ward" {...register("name",{
-                    required: "this field is required"
-                  })} />
-                  <p className="absolute top-0 right-0 text-xs font-bold text-danger">{errors.name?.message}</p>
-                </div>
-                <div className="flex flex-col gap-2 flex-1">
-                  <label htmlFor="email" className="text-xs font-bold">Email Adress</label>
-                  <input type="email" id="email" className="px-6 py-5 text-sm font-bold rounded-lg border border-solid border-[#cfcfcf] caret-burntSienna focus:border-burntSienna focus:outline-burntSienna" placeholder="Alexei@mail.com" {...register("email",{
-                    required: "this field is required"
-                  })} />
-                  <p>{errors.email?.message}</p>
-                </div>
-                <div className="flex flex-col gap-2 w-full">
-                  <label htmlFor="phoneNumber" className="text-xs font-bold">Phone Number</label>
-                  <input type="tel" id="phoneNumber" className="px-6 py-5 text-sm font-bold rounded-lg border border-solid border-[#cfcfcf] caret-burntSienna focus:border-burntSienna focus:outline-burntSienna" placeholder="+1 202-555-0136" {...register("phoneNumber",{
-                    required: "this field is required"
-                  })} />
-                  <p>{errors.phoneNumber?.message}</p>
-                </div>
+                <TextInput register={register} label="Name" type="text" name="name" error={errors.name} style="flex-1" placeholder="Alexei Ward" />
+                <TextInput register={register} label="Email Address" type="email" name="email" error={errors.email} style="flex-1" placeholder="Alexei@mail.com" />
+                <TextInput register={register} label="Phone Number" type="tel" name="phoneNumber" error={errors.phoneNumber} style="w-full" placeholder="+1 202-555-0136" />
               </div>
             </div>
             <div className="mb-8">
               <h3 className="text-sm text-burntSienna font-bold uppercase tracking-wider mt-8 mb-4">shipping info</h3>
               <div className="flex flex-wrap gap-6">
-                <div className="flex flex-col gap-2 w-full">
-                  <label htmlFor="address" className="text-xs font-bold">Your Address</label>
-                  <input type="text" id="address" className="px-6 py-5 text-sm font-bold rounded-lg border border-solid border-[#cfcfcf] caret-burntSienna focus:border-burntSienna focus:outline-burntSienna" placeholder="1137 Williams Avenue" {...register("address")} />
-                </div>
-                <div className="flex flex-col gap-2 flex-1">
-                  <label htmlFor="zip" className="text-xs font-bold">ZIP Code</label>
-                  <input type="text" id="zip" className="px-6 py-5 text-sm font-bold rounded-lg border border-solid border-[#cfcfcf] caret-burntSienna focus:border-burntSienna focus:outline-burntSienna" placeholder="10001" {...register("zip")} />
-                </div>
-                <div className="flex flex-col gap-2 flex-1">
-                  <label htmlFor="city" className="text-xs font-bold">City</label>
-                  <input type="text" id="city" className="px-6 py-5 text-sm font-bold rounded-lg border border-solid border-[#cfcfcf] caret-burntSienna focus:border-burntSienna focus:outline-burntSienna" placeholder="New York" {...register("city")} />
-                </div>
-                <div className="flex flex-col gap-2 w-full">
-                  <label htmlFor="country" className="text-xs font-bold">Country</label>
-                  <input type="text" id="country" className="px-6 py-5 text-sm font-bold rounded-lg border border-solid border-[#cfcfcf] caret-burntSienna focus:border-burntSienna focus:outline-burntSienna" placeholder="United States" {...register("country")} />
-                </div>
+                <TextInput register={register} label="Your Address" type="text" name="address" error={errors.address} style="w-full" placeholder="1137 Williams Avenue" />
+                <TextInput register={register} label="ZIP Code" type="text" name="zip" error={errors.zip} style="flex-1" placeholder="10001" />
+                <TextInput register={register} label="City" type="text" name="city" error={errors.city} style="flex-1" placeholder="New York" />
+                <TextInput register={register} label="Country" type="text" name="country" error={errors.country} style="w-full" placeholder="United States" />
               </div>
             </div>
             <div>
