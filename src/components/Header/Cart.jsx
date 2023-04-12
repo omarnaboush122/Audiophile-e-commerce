@@ -9,6 +9,29 @@ const Cart = ({ isCartOpen, setIsCartOpen }) => {
     setProducts([]);
   }
 
+  const increment = (productId) => {
+    setProducts(prevProducts =>
+      prevProducts.map(product => {
+        if (product.id === productId) {
+          return { ...product, count: product.count + 1 };
+        }
+        return product;
+      })
+    );
+  };
+
+  const decrement = (productId) => {
+    setProducts(prevProducts =>
+      prevProducts.map(product => {
+        if (product.id === productId) {
+          return { ...product, count: product.count - 1 };
+        }
+        return product;
+      })
+    );
+  };
+
+
   const productsElements = products.map(product => (
     <div key={product.id} className="flex justify-between items-center">
       <img src={product.img} alt={product.name} className="w-16 h-16 rounded-lg" />
@@ -16,7 +39,11 @@ const Cart = ({ isCartOpen, setIsCartOpen }) => {
         <h3 className="text-sm font-bold uppercase tracking-wider">{product.name}</h3>
         <p className="text-sm font-bold opacity-50">{formatPrice(product.price)}</p>
       </div>
-      <p className="text-sm font-bold opacity-50">{product.count}x</p>
+      <div className="bg-brightGray text-black flex items-center gap-6 p-4">
+        <span className="block opacity-25 font-bold text-center cursor-pointer hover:text-burntSienna transition-colors duration-300" onClick={() => decrement(product.id)}>-</span>
+        <span className="text-sm font-bold text-center uppercase">{product.count}</span>
+        <span className="block opacity-25 font-bold text-center cursor-pointer hover:text-burntSienna transition-colors duration-300" onClick={() => increment(product.id)}>+</span>
+      </div>
     </div>
   ));
 
