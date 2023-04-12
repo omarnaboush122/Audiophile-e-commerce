@@ -3,14 +3,10 @@ import { Context } from "../../Context";
 import { Link } from "react-router-dom";
 
 const Cart = ({ isCartOpen, setIsCartOpen }) => {
-  const { products, setProducts } = useContext(Context);
+  const { products, setProducts, totalPrice, formatPrice } = useContext(Context);
 
   const removeAllProducts = () => {
     setProducts([]);
-  }
-
-  const formatPrice = (price) => {
-    return price.toLocaleString("en-US", { style: "currency", currency: "USD" });
   }
 
   const productsElements = products.map(product => (
@@ -24,9 +20,6 @@ const Cart = ({ isCartOpen, setIsCartOpen }) => {
     </div>
   ));
 
-  const totalPrice = products.reduce((acc, product) => {
-    return acc + product.price * product.count
-  }, 0)
 
   return (
     <div

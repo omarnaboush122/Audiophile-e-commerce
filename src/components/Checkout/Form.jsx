@@ -5,11 +5,11 @@ import { Context } from "../../Context";
 
 const Form = () => {
   const [payment, setPayment] = useState("e-money");
-  const {products} = useContext(Context);
+  const { products, totalPrice, formatPrice } = useContext(Context);
+  const shipping = 50;
+  const vat = 1079;
+  const grandTotal = totalPrice + shipping + vat;
 
-  const formatPrice = (price) => {
-    return price.toLocaleString("en-US", { style: "currency", currency: "USD" });
-  }
 
   const productsElements = products.map(product => (
     <div key={product.id} className="flex">
@@ -110,9 +110,27 @@ const Form = () => {
           <article className="bg-white p-8 rounded-lg h-fit">
             <h1 className="text-lg font-bold uppercase tracking-widest mb-8">summary</h1>
             <div className="flex flex-col gap-6">
-            {productsElements}
+              {productsElements}
             </div>
-            
+            <div className="flex flex-col gap-2 my-8">
+              <div className="flex justify-between items-center">
+                <h3 className="font-medium opacity-50 uppercase">total</h3>
+                <p className="text-lg font-bold">{formatPrice(totalPrice)}</p>
+              </div>
+              <div className="flex justify-between items-center">
+                <h3 className="font-medium opacity-50 uppercase">shipping</h3>
+                <p className="text-lg font-bold">{formatPrice(shipping)}</p>
+              </div>
+              <div className="flex justify-between items-center">
+                <h3 className="font-medium opacity-50 uppercase">vat (included)</h3>
+                <p className="text-lg font-bold">{formatPrice(vat)}</p>
+              </div>
+            </div>
+            <div className="flex justify-between items-center mb-8">
+              <h3 className="font-medium opacity-50 uppercase">grand total</h3>
+              <p className="text-burntSienna text-lg font-bold">{formatPrice(grandTotal)}</p>
+            </div>
+            <button type="sumbit" className="bg-burntSienna text-white text-sm font-bold py-4 w-full cursor-pointer uppercase tracking-widest hover:bg-peach transition-colors duration-300">continue & pay</button>
           </article>
         </form>
       </div>
