@@ -1,6 +1,8 @@
+import { useState } from "react";
 
 
 const Form = () => {
+  const [payment, setPayment] = useState("e-money");
   return (
     <section className="mb-24">
       <div className="w-[90vw] max-w-6xl mx-auto grid grid-cols-1">
@@ -42,6 +44,30 @@ const Form = () => {
                 <div className="flex flex-col gap-2 w-full">
                   <label htmlFor="country" className="text-xs font-bold">Country</label>
                   <input type="text" id="country" className="px-6 py-5 text-sm font-bold rounded-lg border border-solid border-[#cfcfcf] focus:border-burntSienna focus:outline-burntSienna" placeholder="United States" />
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm text-burntSienna font-bold uppercase tracking-wider mt-8 mb-4">payment details</h3>
+              <div className="flex flex-col gap-4 md:flex-row md:justify-between md:gap-0">
+                <h4 className="text-xs font-bold capitalize">payment method</h4>
+                <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-4 font-bold px-6 py-5 rounded-lg border border-solid border-[#cfcfcf] cursor-pointer" onClick={() => setPayment("e-money")}>
+                    <div className="relative w-6 h-6 rounded-full border border-solid border-[#cfcfcf]">
+                      {
+                        payment === "e-money" ? <div className="absolute w-3 h-3 rounded-full top-1/2 left-1/2 bg-burntSienna -translate-x-1/2 -translate-y-1/2"></div> : null
+                      }
+                    </div>
+                    e-Money
+                  </div>
+                  <div className="flex items-center gap-4 font-bold px-6 py-5 rounded-lg border border-solid border-[#cfcfcf] cursor-pointer" onClick={() => setPayment("cash")}>
+                    <div className="relative w-6 h-6 rounded-full border border-solid border-[#cfcfcf]">
+                      {
+                        payment === "cash" ? <div className="absolute w-3 h-3 rounded-full top-1/2 left-1/2 bg-burntSienna -translate-x-1/2 -translate-y-1/2"></div> : null
+                      }
+                    </div>
+                    Cash on Delivery
+                  </div>
                 </div>
               </div>
             </div>
