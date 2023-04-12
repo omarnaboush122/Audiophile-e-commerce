@@ -56,6 +56,7 @@ const Cart = ({ isCartOpen, setIsCartOpen }) => {
       {
         products.length > 0 ? <Link to="/checkout"
           className="block w-full bg-burntSienna py-4 text-white text-center text-sm font-bold uppercase tracking-wider rounded"
+          onClick={() => setIsCartOpen(false)}
         >
           checkout
         </Link> : <button

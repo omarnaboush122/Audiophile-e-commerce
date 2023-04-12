@@ -3,7 +3,7 @@
 const Summary = () => {
   return (
     <article>
-      
+      summary
     </article>
   );
 }
