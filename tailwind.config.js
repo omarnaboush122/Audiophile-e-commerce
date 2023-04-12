@@ -9,6 +9,7 @@ export default {
       peach: "#FBAF85",
       white: "#fff",
       black: "#000",
+      danger: "#ce2c2c"
     },
     extend: {},
   },
