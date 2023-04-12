@@ -1,14 +1,32 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Cash from "../../assets/checkout/icon-cash-on-delivery.svg";
+import { Context } from "../../Context";
 
 
 const Form = () => {
   const [payment, setPayment] = useState("e-money");
+  const {products} = useContext(Context);
+
+  const formatPrice = (price) => {
+    return price.toLocaleString("en-US", { style: "currency", currency: "USD" });
+  }
+
+  const productsElements = products.map(product => (
+    <div key={product.id} className="flex">
+      <img src={product.img} alt={product.name} className="w-16 h-16 rounded-lg mr-8" />
+      <div className="flex flex-col gap-2 mr-auto">
+        <h3 className="text-sm font-bold uppercase tracking-wider">{product.name}</h3>
+        <p className="text-sm font-bold opacity-50">{formatPrice(product.price)}</p>
+      </div>
+      <p className="text-sm font-bold opacity-50">{product.count}x</p>
+    </div>
+  ));
+
   return (
     <section className="mb-24">
       <div className="w-[90vw] max-w-6xl mx-auto grid grid-cols-1">
-        <form>
-          <article className="bg-white p-6 rounded-lg">
+        <form className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <article className="bg-white p-8 rounded-lg">
             <h1 className="text-3xl font-bold uppercase tracking-wider">checkout</h1>
             <div className="mb-8">
               <h3 className="text-sm text-burntSienna font-bold uppercase tracking-wider mt-8 mb-4">billing details</h3>
@@ -88,6 +106,13 @@ const Form = () => {
                 </div>
               }
             </div>
+          </article>
+          <article className="bg-white p-8 rounded-lg h-fit">
+            <h1 className="text-lg font-bold uppercase tracking-widest mb-8">summary</h1>
+            <div className="flex flex-col gap-6">
+            {productsElements}
+            </div>
+            
           </article>
         </form>
       </div>
