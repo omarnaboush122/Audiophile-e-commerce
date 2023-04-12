@@ -4,10 +4,11 @@ import { Context } from "../../Context";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import TextInput from "./TextInput";
+import RadioInput from "./RadioInput";
 
 
 const Form = () => {
-  const [payment, setPayment] = useState("e-money");
+  const [payment, setPayment] = useState("e-Money");
   const { products, totalPrice, formatPrice } = useContext(Context);
   const shipping = 50;
   const vat = 1079;
@@ -59,35 +60,14 @@ const Form = () => {
               <div className="flex flex-col gap-4 md:flex-row md:justify-between md:gap-0">
                 <h4 className="text-xs font-bold capitalize">payment method</h4>
                 <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-4 font-bold px-6 py-5 rounded-lg border border-solid border-[#cfcfcf] cursor-pointer md:w-80" onClick={() => setPayment("e-money")}>
-                    <div className="relative w-6 h-6 rounded-full border border-solid border-[#cfcfcf]">
-                      {
-                        payment === "e-money" ? <div className="absolute w-3 h-3 rounded-full top-1/2 left-1/2 bg-burntSienna -translate-x-1/2 -translate-y-1/2"></div> : null
-                      }
-                    </div>
-                    e-Money
-                  </div>
-                  <div className="flex items-center gap-4 font-bold px-6 py-5 rounded-lg border border-solid border-[#cfcfcf] cursor-pointer md:w-80" onClick={() => setPayment("cash")}>
-                    <div className="relative w-6 h-6 rounded-full border border-solid border-[#cfcfcf]">
-                      {
-                        payment === "cash" ? <div className="absolute w-3 h-3 rounded-full top-1/2 left-1/2 bg-burntSienna -translate-x-1/2 -translate-y-1/2"></div> : null
-                      }
-                    </div>
-                    Cash on Delivery
-                  </div>
+                  <RadioInput payment={payment} setPayment={setPayment} name="e-Money" text="e-Money" />
+                  <RadioInput payment={payment} setPayment={setPayment} name="cash" text="Cash on Delivery" />
                 </div>
-
               </div>
               {
-                payment === "e-money" ? <div className="flex flex-wrap gap-6 mt-8">
-                  <div className="flex flex-col gap-2 flex-1">
-                    <label htmlFor="e-money-number" className="text-xs font-bold">E-Money Number</label>
-                    <input type="text" id="e-money-number" className="px-6 py-5 text-sm font-bold rounded-lg border border-solid border-[#cfcfcf] caret-burntSienna focus:border-burntSienna focus:outline-burntSienna" placeholder="238521993" {...register("e-money-number")} />
-                  </div>
-                  <div className="flex flex-col gap-2 flex-1">
-                    <label htmlFor="e-money-pin" className="text-xs font-bold">E-Money PIN</label>
-                    <input type="text" id="e-money-pin" className="px-6 py-5 text-sm font-bold rounded-lg border border-solid border-[#cfcfcf] caret-burntSienna focus:border-burntSienna focus:outline-burntSienna" placeholder="6891" {...register("e-money-pin")} />
-                  </div>
+                payment === "e-Money" ? <div className="flex flex-wrap gap-6 mt-8">
+                  <TextInput register={register} label="E-Money Number" type="text" name="eMoneyNumber" error={errors.eMoneyNumber} style="flex-1" placeholder="238521993" />
+                  <TextInput register={register} label="E-Money PIN" type="text" name="eMoneyPin" error={errors.eMoneyPin} style="flex-1" placeholder="6891" />
                 </div> : <div className="flex flex-col justify-center items-center text-center gap-6 mt-8 md:flex-row md:text-left">
                   <img src={Cash} alt="cash-on-delivery" className="w-12 h-12" />
                   <p className="font-medium opacity-50">The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
