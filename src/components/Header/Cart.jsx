@@ -11,24 +11,22 @@ const Cart = ({ isCartOpen, setIsCartOpen }) => {
 
   const increment = (productId) => {
     setProducts(prevProducts =>
-      prevProducts.map(product => {
-        if (product.id === productId) {
-          return { ...product, count: product.count + 1 };
-        }
-        return product;
-      })
+      prevProducts.map(product => (
+        product.id === productId ? { ...product, count: product.count + 1 } : product
+      ))
     );
   };
 
   const decrement = (productId) => {
     setProducts(prevProducts =>
-      prevProducts.map(product => {
-        if (product.id === productId) {
-          return { ...product, count: product.count - 1 };
-        }
-        return product;
-      })
+      prevProducts.map(product => (
+        product.id === productId ? { ...product, count: product.count - 1 } : product
+      ))
     );
+    setProducts(prevProducts =>
+      prevProducts.filter(product => (
+        product.id === productId ? product.count > 0 : product
+      )))
   };
 
 
