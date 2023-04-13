@@ -5,11 +5,13 @@ import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
 import TextInput from "./TextInput";
 import RadioInput from "./RadioInput";
+import ThankYou from "./ThankYou";
 
 
 const Form = () => {
-  const [payment, setPayment] = useState("e-Money");
   const { products, totalPrice, formatPrice } = useContext(Context);
+  const [payment, setPayment] = useState("e-Money");
+  const [order, setOrder] = useState(false);
   const shipping = 50;
   const vat = 1079;
   const grandTotal = totalPrice + shipping + vat;
@@ -18,7 +20,9 @@ const Form = () => {
   const { errors } = formState;
 
   const onSubmit = (data) => {
-    console.log("form submitted", data);
+    if (data) {
+      setOrder(true);
+    }
   }
 
   const productsElements = products.map(product => (
@@ -33,7 +37,8 @@ const Form = () => {
   ));
 
   return (
-    <section className="mb-24">
+    <section className="relative mb-24">
+        <ThankYou grandTotal={grandTotal} />
       <div className="w-[90vw] max-w-6xl mx-auto grid grid-cols-1">
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8 lg:flex-row">
           <article className="bg-white p-8 rounded-lg lg:flex-1">
