@@ -11,7 +11,7 @@ import ThankYou from "./ThankYou";
 const Form = () => {
   const { products, totalPrice, formatPrice } = useContext(Context);
   const [payment, setPayment] = useState("e-Money");
-  const [order, setOrder] = useState(false);
+  const [isFormTrue, setIsFormTrue] = useState(false);
   const shipping = 50;
   const vat = 1079;
   const grandTotal = totalPrice + shipping + vat;
@@ -21,7 +21,7 @@ const Form = () => {
 
   const onSubmit = (data) => {
     if (data) {
-      setOrder(true);
+      setIsFormTrue(true);
     }
   }
 
@@ -38,7 +38,7 @@ const Form = () => {
 
   return (
     <section className="relative mb-24">
-        <ThankYou grandTotal={grandTotal} />
+      {isFormTrue && <ThankYou grandTotal={grandTotal} />}
       <div className="w-[90vw] max-w-6xl mx-auto grid grid-cols-1">
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8 lg:flex-row">
           <article className="bg-white p-8 rounded-lg lg:flex-1">
