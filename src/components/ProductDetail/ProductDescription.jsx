@@ -50,7 +50,7 @@ const ProductDescription = ({ id, img, name, newProduct, description, price }) =
 
   return (
     <section className="mb-16">
-      <div className="w-[90vw] max-w-6xl mx-auto flex flex-col justify-center items-center gap-8 md:flex-row md:gap-16 lg:gap-32">
+      <div className="w-[90vw] max-w-6xl mx-auto flex flex-col justify-center items-center gap-8 md:gap-16 lg:flex-row lg:gap-32">
         <img src={img} alt={name} className="w-full h-full rounded-lg" />
         <article className="flex flex-col gap-6 text-black md:gap-8">
           {newProduct && <h3 className="text-sm text-burntSienna uppercase tracking-[10px]">new product</h3>}
