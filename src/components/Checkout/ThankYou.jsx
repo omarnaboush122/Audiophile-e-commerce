@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import CheckMark from "../../assets/checkout/icon-order-confirmation.svg";
 import { Context } from "../../Context";
 import { Link } from "react-router-dom";
 
@@ -8,7 +7,7 @@ const ThankYou = ({ grandTotal }) => {
   return (
     <div className="bg-white p-8 rounded-lg w-[90vw] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow z-50 max-w-lg">
       <div className="relative w-16 h-16 bg-burntSienna rounded-full mb-6">
-        <img src={CheckMark} alt="" />
+        <img src="/assets/checkout/icon-order-confirmation.svg" alt="icon-order-confirmation" />
       </div>
       <h3 className="text-2xl font-bold tracking-wider uppercase">thank you for your order</h3>
       <p className="font-medium opacity-50 mt-4 mb-6">You will receive an email confirmation shortly.</p>

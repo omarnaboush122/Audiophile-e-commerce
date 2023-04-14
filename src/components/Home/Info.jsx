@@ -1,11 +1,11 @@
-import Hero from "../../assets/shared/desktop/image-best-gear.jpg"
+
 
 const Info = () => {
   return (
     <section className='my-32'>
       <div className="w-[90vw] max-w-6xl mx-auto flex flex-col gap-10 md:gap-16 lg:flex-row-reverse lg:items-center lg:gap-32">
         <article>
-          <img src={Hero} alt="hero" className="w-full h-[300px] rounded-lg object-cover flex-1 lg:h-[540px]" />
+          <img src="/assets/shared/desktop/image-best-gear.jpg" alt="hero" className="w-full h-[300px] rounded-lg object-cover flex-1 lg:h-[540px]" />
         </article>
         <article className="flex flex-col gap-8 text-center text-black max-w-xl mx-auto flex-1 lg:mx-0 lg:text-left">
           <h3 className="text-2xl font-bold tracking-wider uppercase sm:text-3xl md:text-4xl">Bringing you the <span className="text-burntSienna">best</span> audio gear</h3>

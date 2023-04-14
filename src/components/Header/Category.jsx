@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import IconArrowRight from "../../assets/shared/desktop/icon-arrow-right.svg";
 
 const Category = ({ image, title, link }) => {
   return (
@@ -18,7 +17,7 @@ const Category = ({ image, title, link }) => {
           className="flex items-center gap-2 text-sm font-bold uppercase tracking-wide opacity-50 hover:text-burntSienna transition-colors duration-300"
         >
           <span>shop</span>
-          <img src={IconArrowRight} alt="icon-arrow-right" />
+          <img src="/assets/shared/desktop/icon-arrow-right.svg" alt="icon-arrow-right" />
         </Link>
       </div>
     </li>

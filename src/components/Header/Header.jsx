@@ -1,8 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../assets/shared/desktop/logo.svg";
-import CartIcon from "../../assets/shared/desktop/icon-cart.svg";
-import Hamburger from "../../assets/shared/tablet/icon-hamburger.svg";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Cart from "./Cart";
@@ -31,7 +28,7 @@ const Header = () => {
             />
           ) : (
             <img
-              src={Hamburger}
+              src="/assets/shared/tablet/icon-hamburger.svg"
               alt="hamburger"
               className="cursor-pointer"
               onClick={toggleSidebar}
@@ -40,14 +37,14 @@ const Header = () => {
         </div>
 
         <Link to="/">
-          <img src={Logo} alt="logo" className="md:mr-96 lg:mr-0" />
+          <img src="/assets/shared/desktop/logo.svg" alt="logo" className="md:mr-96 lg:mr-0" />
         </Link>
 
         <Navbar />
 
         <div className="relative">
           <img
-            src={CartIcon}
+            src="/assets/shared/desktop/icon-cart.svg"
             alt="cart-icon"
             className="cursor-pointer"
             onClick={toggleCart}

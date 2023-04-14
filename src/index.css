@@ -10,11 +10,11 @@ body {
 }
 
 .shadow {
-  box-shadow: 0 0 0 100rem rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 0 300rem rgba(0, 0, 0, 0.4);
 }
 
 .home-intro {
-  background-image: url("/src/assets/home/tablet/image-header.jpg");
+  background-image: url("/assets/home/tablet/image-header.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -23,19 +23,19 @@ body {
 
 @media (min-width: 768px) {
   .home-intro {
-    background-image: url("/src/assets/home/tablet/image-header.jpg");
+    background-image: url("/assets/home/tablet/image-header.jpg");
   }
 }
 
 @media (min-width: 1024px) {
   .home-intro {
-    background-image: url("/src/assets/home/desktop/image-hero.jpg");
+    background-image: url("/assets/home/desktop/image-hero.jpg");
     background-position: center 80%;
   }
 }
 
 .speakerzx7 {
-  background-image: url("/src/assets/home/desktop/image-speaker-zx7.jpg");
+  background-image: url("/assets/home/desktop/image-speaker-zx7.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

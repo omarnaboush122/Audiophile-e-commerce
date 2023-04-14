@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Logo from "../../assets/shared/desktop/logo.svg";
 import { FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
@@ -8,7 +7,7 @@ const Footer = () => {
     <footer className="bg-blackBean text-white">
       <div className='w-[90vw] max-w-6xl mx-auto text-center pb-12 md:text-left'>
         <div className="flex flex-col justify-center items-center md:justify-start md:items-start lg:flex-row lg:justify-between lg:items-center">
-          <img src={Logo} alt="logo" className="py-12 border-t-4 border-solid border-burntSienna md:pt-14" />
+          <img src="/assets/shared/desktop/logo.svg" alt="logo" className="py-12 border-t-4 border-solid border-burntSienna md:pt-14" />
           <ul className="flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
             <li className="text-sm font-bold tracking-widest uppercase hover:text-burntSienna transition-colors duration-300">
               <Link to="/">home</Link>

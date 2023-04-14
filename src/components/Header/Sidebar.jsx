@@ -1,25 +1,22 @@
-import CategoryThumbnailEarphones from "../../assets/shared/desktop/image-category-thumbnail-earphones.png";
-import CategoryThumbnailSpeakers from "../../assets/shared/desktop/image-category-thumbnail-speakers.png";
-import CategoryThumbnailHeadphones from "../../assets/shared/desktop/image-category-thumbnail-headphones.png";
 import Category from "./Category";
 
 export const categoryData = [
   {
     id: 1,
     title: "headphones",
-    image: CategoryThumbnailHeadphones,
+    image: "/assets/shared/desktop/image-category-thumbnail-headphones.png",
     link: "/headphones",
   },
   {
     id: 2,
     title: "speakers",
-    image: CategoryThumbnailSpeakers,
+    image: "/assets/shared/desktop/image-category-thumbnail-speakers.png",
     link: "/speakers",
   },
   {
     id: 3,
     title: "earphones",
-    image: CategoryThumbnailEarphones,
+    image: "/assets/shared/desktop/image-category-thumbnail-earphones.png",
     link: "/earphones",
   },
 ];

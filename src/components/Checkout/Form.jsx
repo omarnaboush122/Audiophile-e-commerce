@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import Cash from "../../assets/checkout/icon-cash-on-delivery.svg";
 import { Context } from "../../Context";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
@@ -74,7 +73,7 @@ const Form = () => {
                   <TextInput register={register} label="E-Money Number" type="text" name="eMoneyNumber" error={errors.eMoneyNumber} style="flex-1" placeholder="238521993" />
                   <TextInput register={register} label="E-Money PIN" type="text" name="eMoneyPin" error={errors.eMoneyPin} style="flex-1" placeholder="6891" />
                 </div> : <div className="flex flex-col justify-center items-center text-center gap-6 mt-8 md:flex-row md:text-left">
-                  <img src={Cash} alt="cash-on-delivery" className="w-12 h-12" />
+                  <img src="/assets/checkout/icon-cash-on-delivery.svg" alt="cash-on-delivery" className="w-12 h-12" />
                   <p className="font-medium opacity-50">The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.</p>
                 </div>
               }
