@@ -1,10 +1,18 @@
 import { Link } from "react-router-dom";
 import { FaTwitter, FaInstagram, FaFacebook } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Footer = () => {
   const year = new Date().getFullYear();
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
-    <footer className="bg-blackBean text-white">
+    <footer className="bg-blackBean text-white" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
       <div className='w-[90vw] max-w-6xl mx-auto text-center pb-12 md:text-left'>
         <div className="flex flex-col justify-center items-center md:justify-start md:items-start lg:flex-row lg:justify-between lg:items-center">
           <img src="/assets/shared/desktop/logo.svg" alt="logo" className="py-12 border-t-4 border-solid border-burntSienna md:pt-14" />
