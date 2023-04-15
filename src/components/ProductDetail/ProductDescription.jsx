@@ -1,6 +1,9 @@
 import { useContext } from "react";
 import { useState } from "react";
 import { Context } from "../../Context";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 
 const ProductDescription = ({ id, img, name, newProduct, description, price }) => {
@@ -47,12 +50,15 @@ const ProductDescription = ({ id, img, name, newProduct, description, price }) =
 
   const formattedPrice = price.toLocaleString("en-US", { style: "currency", currency: "USD" });
 
+  useEffect(() => {
+    AOS.init();
+  }, [])
 
   return (
     <section className="mb-16">
       <div className="w-[90vw] max-w-6xl mx-auto flex flex-col justify-center items-center gap-8 md:gap-16 lg:flex-row lg:gap-32">
-        <img src={img} alt={name} className="w-full h-full rounded-lg" />
-        <article className="flex flex-col gap-6 text-black md:gap-8">
+        <img src={img} alt={name} className="w-full h-full rounded-lg" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500" />
+        <article className="flex flex-col gap-6 text-black md:gap-8" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
           {newProduct && <h3 className="text-sm text-burntSienna uppercase tracking-[10px]">new product</h3>}
           <h2 className="text-3xl font-bold tracking-wider md:text-4xl">{name}</h2>
           <p className=" font-medium opacity-50">{description}</p>

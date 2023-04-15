@@ -1,4 +1,6 @@
-
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const ProductFeatures = ({ features, includes }) => {
 
@@ -15,15 +17,19 @@ const ProductFeatures = ({ features, includes }) => {
     </div>
   ))
 
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
     <section className='my-32'>
       <div className='w-[90vw] max-w-6xl mx-auto'>
         <div className="w-full flex flex-col gap-28 lg:flex-row">
-          <article className="flex flex-col gap-8 max-w-2xl">
+          <article className="flex flex-col gap-8 max-w-2xl" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
             <h1 className='text-3xl font-bold tracking-widest'>Features</h1>
             {featuresElements}
           </article>
-          <article className="flex flex-col gap-8">
+          <article className="flex flex-col gap-8" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
             <h1 className=' text-2xl font-bold uppercase tracking-wider'>in the box</h1>
             <div className="flex flex-col gap-4">
               {boxElements}

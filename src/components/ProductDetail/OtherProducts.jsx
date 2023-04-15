@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const OtherProducts = ({ others }) => {
+
+  useEffect(() => {
+    AOS.init();
+  }, [])
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -8,7 +15,6 @@ const OtherProducts = ({ others }) => {
       behavior: "smooth"
     });
   };
-
   const otherProductsElements = others.map((item, i) => (
     <article key={i} className="flex flex-col gap-8">
       <img src={item.image.desktop} alt={item.name} className="w-full h-full" />
@@ -17,7 +23,7 @@ const OtherProducts = ({ others }) => {
     </article>
   ))
   return (
-    <section className="my-32">
+    <section className="my-32" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
       <div className="w-[90vw] max-w-6xl mx-auto">
         <h3 className="text-2xl font-bold uppercase mb-10 text-center tracking-wider">you may also like</h3>
         <div className="grid grid-cols-1 gap-14 md:grid-cols-3 md:gap-3">

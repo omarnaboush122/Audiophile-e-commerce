@@ -5,6 +5,9 @@ import { DevTool } from "@hookform/devtools";
 import TextInput from "./TextInput";
 import RadioInput from "./RadioInput";
 import ThankYou from "./ThankYou";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 
 const Form = () => {
@@ -35,12 +38,16 @@ const Form = () => {
     </div>
   ));
 
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
     <section className="relative mb-24">
       {isFormTrue && <ThankYou grandTotal={grandTotal} />}
       <div className="w-[90vw] max-w-6xl mx-auto grid grid-cols-1">
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8 lg:flex-row">
-          <article className="bg-white p-8 rounded-lg lg:flex-1">
+          <article className="bg-white p-8 rounded-lg lg:flex-1"  data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
             <h1 className="text-3xl font-bold uppercase tracking-wider">checkout</h1>
             <div className="mb-8">
               <h3 className="text-sm text-burntSienna font-bold uppercase tracking-wider mt-8 mb-4">billing details</h3>
@@ -79,7 +86,7 @@ const Form = () => {
               }
             </div>
           </article>
-          <article className="bg-white p-8 rounded-lg h-fit">
+          <article className="bg-white p-8 rounded-lg h-fit"  data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
             <h1 className="text-lg font-bold uppercase tracking-widest mb-8">summary</h1>
             <div className="flex flex-col gap-6">
               {productsElements}
