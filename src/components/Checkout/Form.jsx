@@ -15,7 +15,7 @@ const Form = () => {
   const [payment, setPayment] = useState("e-Money");
   const [isFormTrue, setIsFormTrue] = useState(false);
   const shipping = 50;
-  const vat = 1079;
+  const vat = totalPrice * 0.2;
   const grandTotal = totalPrice + shipping + vat;
 
   const { register, control, handleSubmit, formState } = useForm();
@@ -86,7 +86,7 @@ const Form = () => {
               }
             </div>
           </article>
-          <article className="bg-white p-8 rounded-lg h-fit"  data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+          <article className="bg-white p-8 rounded-lg h-fit" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
             <h1 className="text-lg font-bold uppercase tracking-widest mb-8">summary</h1>
             <div className="flex flex-col gap-6">
               {productsElements}
