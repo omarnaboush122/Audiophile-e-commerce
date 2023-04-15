@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Intro = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
-    <section className="home-intro">
+    <section className="home-intro" data-aos="fade-down" data-aos-duration="1500">
       <div className="w-[90vw] max-w-6xl mx-auto flex flex-col justify-center items-center h-full text-white text-center border-t border-solid border-[rgb(255,255,255,0.2)] lg:text-left lg:items-start">
         <h3 className="text-sm tracking-[10px] uppercase opacity-50">
           new product

@@ -9,6 +9,8 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 import Checkout from "./pages/Checkout";
 
 const App = () => {
+
+
   return (
     <>
       <Header />
